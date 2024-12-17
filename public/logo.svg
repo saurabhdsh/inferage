@@ -1,0 +1,76 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007AFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#47A1FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.9)" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.6)" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <clipPath id="hexClip">
+      <path d="M60 10L102.32 35V85L60 110L17.68 85V35L60 10Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Hexagon -->
+  <path d="M60 10L102.32 35V85L60 110L17.68 85V35L60 10Z" 
+        fill="url(#primaryGradient)" 
+        filter="url(#glow)" />
+
+  <!-- Neural Network Lines -->
+  <g clip-path="url(#hexClip)" opacity="0.5">
+    <path d="M30 40L60 60M60 60L90 40M30 80L60 60M60 60L90 80" 
+          stroke="white" 
+          stroke-width="1.5"
+          stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Nodes -->
+  <g filter="url(#glow)">
+    <!-- Center Node -->
+    <circle cx="60" cy="60" r="15" 
+            fill="url(#circleGradient)" 
+            stroke="white" 
+            stroke-width="2" />
+
+    <!-- Outer Nodes -->
+    <circle cx="30" cy="40" r="8" fill="white" opacity="0.9" />
+    <circle cx="90" cy="40" r="8" fill="white" opacity="0.9" />
+    <circle cx="30" cy="80" r="8" fill="white" opacity="0.9" />
+    <circle cx="90" cy="80" r="8" fill="white" opacity="0.9" />
+
+    <!-- AI Symbol in Center -->
+    <path d="M55 55L65 65M65 55L55 65" 
+          stroke="#007AFF" 
+          stroke-width="3" 
+          stroke-linecap="round" />
+  </g>
+
+  <!-- Animated Pulse Ring -->
+  <circle cx="60" cy="60" r="25" 
+          stroke="white" 
+          stroke-width="1.5" 
+          fill="none" 
+          opacity="0.3">
+    <animate attributeName="r" 
+             values="25;30;25" 
+             dur="2s" 
+             repeatCount="indefinite" />
+    <animate attributeName="opacity" 
+             values="0.3;0.1;0.3" 
+             dur="2s" 
+             repeatCount="indefinite" />
+  </circle>
+
+  <!-- Outer Glow Ring -->
+  <path d="M60 10L102.32 35V85L60 110L17.68 85V35L60 10Z" 
+        stroke="white" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.3" />
+</svg> 
